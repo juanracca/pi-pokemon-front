@@ -1,0 +1,36 @@
+.mainCard{
+    border: none;
+    margin: 10px;
+    display: inline-block;
+    height: 10rem;
+    width: 25rem;
+    border-radius: 20px;
+    background-color: rgba(226, 217, 164, 0.8);
+    background-repeat: no-repeat;
+    background-size:400px 360px;
+    -moz-background-inline-policy: unset;
+    /* background-image: url('https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2020/12/Pokemon-lanzara-replica-Pokebola.jpg?fit=1280%2C720&quality=80&ssl=1'); */
+    background-attachment: unset;
+}
+.imgCard{
+    width: 50%;
+    height: 110%;
+    display: flex;
+    justify-content: right;
+    margin-left: 5%;
+    margin-top: -20%;
+}
+main:hover{
+    /* height: 360px;
+    weight: 200px; */
+    /* margin: 100px */
+    /* padding: 10px; */
+    /* padding-top: 10px; */
+}
+
+.h3card{
+    display: flex;
+    justify-content:right;
+    margin-right: 5%;
+    font-family:'Courier New', Courier, monospace;
+}

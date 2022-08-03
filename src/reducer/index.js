@@ -8,17 +8,18 @@ const initialState = {
 };
 
 function rootReducer(state = initialState, { type, payload }) {
-
+    
     switch (type) {
-        case GET_POKEMONS :
-            console.log(payload)
+
+        case GET_POKEMONS:
+            
             return{
                 ...state,
                 allPokemons: payload,
                 pokemonsCopy: payload,
             };
+            
         default:
-            console.log(state.allPokemons)
             return state;
     };
 };

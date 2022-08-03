@@ -1,29 +1,45 @@
 import React from "react";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import Paginado from "./Paginado";
 import Card from "./Card";
-import { getAllPokemons } from "../actions/index"
+import { getAllPokemons } from "../actions/index";
+import '../styles/Home.modules.css';
 
 export default function Home(){
 
     const dispatch = useDispatch();
+    const allPokemons  = useSelector((state) => state.allPokemons);
+    const [ currentPage, setCurrentPage ] = useState(1);
+    const [ pokemonsPerPage, ] = useState(9);
+    const indexOfLastPokemon = currentPage * pokemonsPerPage;
+    const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
+    const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon);
+
+    const paginado = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
     useEffect(() => {
         dispatch(getAllPokemons())
     }, [dispatch]);
-    const { allPokemons } = useSelector((state) => state)
-    console.log(allPokemons)
+
+    allPokemons.sort((a,b) => a.id - b.id)
+
+    console.log(allPokemons);
 
 
     return(
-        <div>
+        <div className='divHome'>
             <br/>
             <Link to='/create'>
                 <button>Create Pokemon</button>
             </Link>
-            <h1>Pokemon</h1>
+            <h1 className='h1home'>POKEDEX</h1>
             <button>Reload Pokemons</button>
             <SearchBar/>
             <br/>
@@ -58,23 +74,33 @@ export default function Home(){
                 <option value="Higher">Higher</option>
                 <option value="Lower">Lower</option>
             </select>
-            <Paginado/>
+            <Paginado
+            pokemonsPerPage = { pokemonsPerPage }
+            allPokemons = { allPokemons.length }
+            paginado = { paginado }
+            />
             {
-                allPokemons? allPokemons.map(el => {
+                currentPokemons ? currentPokemons.map(el => {
                     return(
-                        <div>
+                        <div key={el.id} className='divHomeCards'>
                             <Link to ={'/pokemons/' + el.id}>
                                 <Card
-                                img={el.img}
-                                name={el.name}
-                                type={el.type.map(el => `${el.name} `)}
-                                key={el.id}
+                                img={el.image}
+                                // types={'Type:  ' + el.types.map(ele => '  ' + ele )}
+                                id= {'#  ' + el.id}
+                                name={el.name.toUpperCase()}
                                 />
                             </Link>
                         </div>
                     )
-                }) : console.log(allPokemons)
+                }) : console.log('No se encontraron pokemons')
             }
+            <Paginado
+            pokemonsPerPage = { pokemonsPerPage }
+            allPokemons = { allPokemons.length }
+            paginado = { paginado }
+            />
+            <br />
         </div>
     );
 };

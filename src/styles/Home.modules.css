@@ -1,0 +1,19 @@
+.divHomeCards{
+    display: inline-block;
+    /* flex-direction: row;  */
+    
+}
+main:hover{
+    background-color: rgb(100, 134, 102);
+    
+}
+.divHome{
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/420/552/983/pokemon-go-4k-hd-pic-wallpaper-preview.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.h1home{
+    color: rgba(226, 217, 164, 0.8);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+}

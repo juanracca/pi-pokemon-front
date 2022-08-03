@@ -4,12 +4,14 @@ import {
 } from "./types";
 
 export function getAllPokemons(){
+
     return async function(dispatch){
-        let allPokemons = await axios.get('https://pi-pokemon-back.herokuapp.com/pokemonsdb');
-        console.log(allPokemons.data)
+        let allPokemons = await axios.get('http://localhost:3001/pokemonsDb');
+        let pokemons = allPokemons.data;
+
         return dispatch({
             type: GET_POKEMONS,
-            payload: allPokemons.data
+            payload: pokemons
         });
     };
 };
