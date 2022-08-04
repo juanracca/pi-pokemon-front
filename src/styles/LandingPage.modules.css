@@ -1,0 +1,38 @@
+.divLanding{
+    background-image: url('https://images4.alphacoders.com/661/661563.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding-top: 60%;
+}
+
+.h1Landing{
+    display: flex;
+    justify-content: left;
+    margin-top: -35rem;
+    margin-left: 9.7rem;
+    width: 15rem;
+}
+
+.btnLanding{
+    display: flex;
+    justify-content: left;
+    margin-left: 12.5rem;
+    margin-top: 2rem;
+    width: 10rem;
+    height: 3rem;
+    /* padding: 20px; */
+    padding-top: 1rem;
+    padding-left: 4.5rem;
+    border: none;
+    border-radius: 100px;
+    background-color: rgb(230, 192, 42, 0.9);
+    font-family:'Courier New', Courier, monospace;
+    color: rgb(85, 24, 24);
+    font-size: 1rem;
+    font-weight:900;
+    text-decoration: none;
+}
+.btnLanding:hover{
+    background-color: rgba(83, 57, 16, 0.8);
+    color: rgb(230, 209, 29);
+}

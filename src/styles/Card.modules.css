@@ -5,7 +5,7 @@
     height: 10rem;
     width: 25rem;
     border-radius: 20px;
-    background-color: rgba(226, 217, 164, 0.8);
+    background-color: rgba(133, 84, 20, 0.5);
     background-repeat: no-repeat;
     background-size:400px 360px;
     -moz-background-inline-policy: unset;
@@ -33,4 +33,5 @@ main:hover{
     justify-content:right;
     margin-right: 5%;
     font-family:'Courier New', Courier, monospace;
+    color: whitesmoke;
 }

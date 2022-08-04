@@ -1,0 +1,29 @@
+.divDetail{
+    background-image: url('https://elcrepusculodeloscartuchos.files.wordpress.com/2014/06/pokemon-ball-1920x1080.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment:local;
+    margin-bottom: 0;
+    padding-top: 47rem ;
+}
+
+.btnDetail{
+    display: flex;
+    justify-content: left;
+    margin-left: 5rem;
+    margin-top: -46rem;
+    width: 10rem;
+    height: 3rem;
+    /* padding: 20px; */
+    padding-top: 1rem;
+    /* padding-bottom: 1rem; */
+    padding-left: 4rem;
+    border: none;
+    border-radius: 100px;
+    background-color: rgb(230, 192, 42, 0.9);
+    font-family:'Courier New', Courier, monospace;
+    color: rgb(85, 24, 24);
+    font-size: 1rem;
+    font-weight:900;
+    text-decoration: none;
+}

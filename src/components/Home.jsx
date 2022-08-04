@@ -39,7 +39,7 @@ export default function Home(){
             <Link to='/create'>
                 <button>Create Pokemon</button>
             </Link>
-            <h1 className='h1home'>POKEDEX</h1>
+            
             <button>Reload Pokemons</button>
             <SearchBar/>
             <br/>
@@ -79,6 +79,7 @@ export default function Home(){
             allPokemons = { allPokemons.length }
             paginado = { paginado }
             />
+            <br />
             {
                 currentPokemons ? currentPokemons.map(el => {
                     return(
@@ -95,6 +96,7 @@ export default function Home(){
                     )
                 }) : console.log('No se encontraron pokemons')
             }
+            <br />
             <Paginado
             pokemonsPerPage = { pokemonsPerPage }
             allPokemons = { allPokemons.length }
