@@ -7,7 +7,7 @@ export default function Card({ img, name, id, types }){
         <main className='mainCard'>
             <h3 className='h3card'> {name}</h3>
             <img className='imgCard' src={img} alt="Not found!"  weight='200px' height='200px'/>
-            <h5>{types}</h5>
+            <h5 className='typesCard'>{types}</h5>
             
         </main>
     );

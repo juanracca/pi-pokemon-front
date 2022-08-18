@@ -20,18 +20,18 @@
     margin-left: 5%;
     margin-top: -20%;
 }
-main:hover{
-    /* height: 360px;
-    weight: 200px; */
-    /* margin: 100px */
-    /* padding: 10px; */
-    /* padding-top: 10px; */
-}
 
 .h3card{
     display: flex;
-    justify-content:right;
-    margin-right: 5%;
+    margin-left: 70%;
     font-family:'Courier New', Courier, monospace;
     color: whitesmoke;
+}
+
+.typesCard{
+    display: flex;
+    margin-left: 70%;
+    margin-top: -25%;
+    color: white;
+    font-family:'Courier New', Courier, monospace;
 }

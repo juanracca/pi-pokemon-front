@@ -1,0 +1,17 @@
+.paginado{
+    
+    background-color: rgba(133, 84, 20, 0.8);
+    border-radius: 4px;
+    border: none;
+    margin: 2px;
+    color: rgb(248, 245, 241);
+    width: 2.5rem;
+    height: 1.5rem;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.paginado:hover{
+    background-color: rgba(210, 156, 39, 0.8);
+    color: rgb(243, 242, 240);
+}

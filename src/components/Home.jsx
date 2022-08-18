@@ -7,13 +7,14 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import Paginado from "./Paginado";
 import Card from "./Card";
-import { getAllPokemons } from "../actions/index";
+import { getAllPokemons, getTypes } from "../actions/index";
 import '../styles/Home.modules.css';
 
 export default function Home(){
 
     const dispatch = useDispatch();
     const allPokemons  = useSelector((state) => state.allPokemons);
+    const types = useSelector((state) => state.types);
     const [ currentPage, setCurrentPage ] = useState(1);
     const [ pokemonsPerPage, ] = useState(9);
     const indexOfLastPokemon = currentPage * pokemonsPerPage;
@@ -25,7 +26,8 @@ export default function Home(){
     };
 
     useEffect(() => {
-        dispatch(getAllPokemons())
+        dispatch(getAllPokemons());
+        dispatch(getTypes());
     }, [dispatch]);
 
     allPokemons.sort((a,b) => a.id - b.id)
@@ -45,6 +47,13 @@ export default function Home(){
             <br/>
             <select>
                 <option value="All">Type</option>
+                {
+                    types.map(type => {
+                        return(
+                            <option value={type.name} key={type.id}>{type.name.toUpperCase()}</option>
+                        )
+                    })
+                }
             </select>
             <select>
                 <option value="Existing">Existing</option>
@@ -79,7 +88,6 @@ export default function Home(){
             allPokemons = { allPokemons.length }
             paginado = { paginado }
             />
-            <br />
             {
                 currentPokemons ? currentPokemons.map(el => {
                     return(
@@ -87,17 +95,17 @@ export default function Home(){
                             <Link to ={'/pokemons/' + el.id}>
                                 <Card
                                 img={el.image}
-                                // types={'Type:  ' + el.types.map(ele => '  ' + ele )}
+                                types={'Type:  ' + el.types.map(ele => '  ' + ele.toUpperCase())}
                                 id= {'#  ' + el.id}
                                 name={el.name.toUpperCase()}
                                 />
                             </Link>
                         </div>
                     )
-                }) : console.log('No se encontraron pokemons')
+                }) : <img className='imgLoadingHome' src="https://c.tenor.com/Hg2Mb_mQdhYAAAAi/pokemon-pokeball.gif" alt="" />
             }
             <br />
-            <Paginado
+            <Paginado 
             pokemonsPerPage = { pokemonsPerPage }
             allPokemons = { allPokemons.length }
             paginado = { paginado }
