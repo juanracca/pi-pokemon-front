@@ -1,10 +1,14 @@
 .divDetail{
     background-image: url('https://elcrepusculodeloscartuchos.files.wordpress.com/2014/06/pokemon-ball-1920x1080.jpg');
     background-repeat: no-repeat;
-    background-size:cover;
-    background-attachment:local;
-    margin-bottom: 0;
+    background-size:100% 100%;
+    /* background-attachment:local; */
     padding-top: 47rem ;
+    padding-bottom: 2rem;
+    -webkit-box-align: center;
+    -webkit-background-size: center; 
+    -moz-background-size: center;
+    -o-background-size: center;
 }
 
 .btnDetail{
@@ -52,7 +56,7 @@ h2{
 }
 
 .btnDetail:hover{
-    background-color: rgb(105, 90, 4);
+    background-color: rgb(190, 148, 10);
 }
 
 .loading{
@@ -70,7 +74,7 @@ h2{
     display: flex;
     width: 20rem;
     height: 10rem;
-    margin-left: 40%;
+    margin-left: 30%;
     margin-top: -40%;
     background: none;
 }

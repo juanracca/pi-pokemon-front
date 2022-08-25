@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import Paginado from "./Paginado";
 import Card from "./Card";
-import { getAllPokemons, getTypes } from "../actions/index";
+import { getAllPokemons, getTypes, filterByType } from "../actions/index";
 import '../styles/Home.modules.css';
 
 export default function Home(){
@@ -16,7 +16,7 @@ export default function Home(){
     const allPokemons  = useSelector((state) => state.allPokemons);
     const types = useSelector((state) => state.types);
     const [ currentPage, setCurrentPage ] = useState(1);
-    const [ pokemonsPerPage, ] = useState(9);
+    const [ pokemonsPerPage, ] = useState(15);
     const indexOfLastPokemon = currentPage * pokemonsPerPage;
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
     const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon);
@@ -32,62 +32,65 @@ export default function Home(){
 
     allPokemons.sort((a,b) => a.id - b.id)
 
+    function handleFilterType(e){
+        dispatch(filterByType(e.target.value));
+        console.log(e.target.value)
+    };
+
     console.log(allPokemons);
 
 
     return(
         <div className='divHome'>
             <br/>
+            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png' className='h1Home' alt='Not Found'/>
             <Link to='/create'>
-                <button>Create Pokemon</button>
+                <button className='btnCreatePokemons'>Create Pokemon</button>
             </Link>
             
-            <button>Reload Pokemons</button>
+            <button className='btnResetFilters'>Reset Filters</button>
             <SearchBar/>
             <br/>
-            <select>
+            <div className='divFilters'>
+            <select className='selectTypesHome' onChange={e => {handleFilterType(e)}}>
                 <option value="All">Type</option>
                 {
                     types.map(type => {
                         return(
-                            <option value={type.name} key={type.id}>{type.name.toUpperCase()}</option>
+                            <option value={type.name} key={type.id}>{type.name}</option>
                         )
                     })
                 }
             </select>
-            <select>
+            <select className='selectExistingHome'>
                 <option value="Existing">Existing</option>
                 <option value="Created">Created</option>
             </select>
-            <select>
+            <select className='selectAZHome'>
                 <option value="A-Z">A-Z</option>
                 <option value="Z-A">Z-A</option>
             </select>
-            <select>
+            <select className='selectAttackHome'>
                 <option value="Attack">Attack</option>
                 <option value="Higher">Higher</option>
                 <option value="Lower">Lower</option>
             </select>
-            <select>
+            <select className='selectDefenseHome'>
                 <option value="Defense">Defense</option>
                 <option value="Higher">Higher</option>
                 <option value="Lower">Lower</option>
             </select>
-            <select>
+            <select className='selectHpHome'>
                 <option value="HP">HP</option>
                 <option value="Higher">Higher</option>
                 <option value="Lower">Lower</option>
             </select>
-            <select>
+            <select className='selectSpeedHome'>
                 <option value="Speed">Speed</option>
                 <option value="Higher">Higher</option>
                 <option value="Lower">Lower</option>
             </select>
-            <Paginado
-            pokemonsPerPage = { pokemonsPerPage }
-            allPokemons = { allPokemons.length }
-            paginado = { paginado }
-            />
+            </div>
             {
                 currentPokemons ? currentPokemons.map(el => {
                     return(
@@ -98,6 +101,7 @@ export default function Home(){
                                 types={'Type:  ' + el.types.map(ele => '  ' + ele.toUpperCase())}
                                 id= {'#  ' + el.id}
                                 name={el.name.toUpperCase()}
+                                cardColor={`${el.types[0]}`}
                                 />
                             </Link>
                         </div>

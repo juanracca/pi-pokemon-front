@@ -1,21 +1,243 @@
 .divHomeCards{
     display: inline-block;
-    /* flex-direction: row;  */
-    
 }
-main:hover{
-    background-color: rgba(210, 156, 39, 0.8);
-    
+
+.grass{
+    border: none;
+    margin: 10px;
+    display: inline-block;
+    height: 9rem;
+    width: 25rem;
+    border-radius: 20px;
+    background-color: rgb(49, 106, 49);
+    background-repeat: no-repeat;
+    background-size:400px 360px;
+    -moz-background-inline-policy: unset;
+    background-attachment: unset;
 }
+.grass:hover{
+    background-color: rgb(79, 114, 79);
+}
+.fire{
+    border: none;
+    margin: 10px;
+    display: inline-block;
+    height: 9rem;
+    width: 25rem;
+    border-radius: 20px;
+    background-color: rgb(197, 116, 78);
+    background-repeat: no-repeat;
+    background-size:400px 360px;
+    -moz-background-inline-policy: unset;
+    background-attachment: unset;    
+}
+.fire:hover{
+    background-color: rgb(194, 132, 104);
+}
+.water{
+    border: none;
+    margin: 10px;
+    display: inline-block;
+    height: 9rem;
+    width: 25rem;
+    border-radius: 20px;
+    background-color: rgb(69, 122, 201);
+    background-repeat: no-repeat;
+    background-size:400px 360px;
+    -moz-background-inline-policy: unset;
+    background-attachment: unset;       
+}
+.water:hover{
+    background-color: rgb(95, 139, 205);
+}
+.bug{
+    border: none;
+    margin: 10px;
+    display: inline-block;
+    height: 9rem;
+    width: 25rem;
+    border-radius: 20px;
+    background-color: rgb(142, 156, 64);
+    background-repeat: no-repeat;
+    background-size:400px 360px;
+    -moz-background-inline-policy: unset;
+    background-attachment: unset;   
+}
+.bug:hover{
+    background-color: rgb(151, 159, 107);
+}
+.normal{
+    border: none;
+    margin: 10px;
+    display: inline-block;
+    height: 9rem;
+    width: 25rem;
+    border-radius: 20px;
+    background-color: rgb(213, 185, 158);
+    background-repeat: no-repeat;
+    background-size:400px 360px;
+    -moz-background-inline-policy: unset;
+    background-attachment: unset;   
+}
+.normal:hover{
+    background-color: rgb(212, 199, 186);    
+}
+.fighting{
+    border: none;
+    margin: 10px;
+    display: inline-block;
+    height: 9rem;
+    width: 25rem;
+    border-radius: 20px;
+    background-color: rgb(99, 26, 26);
+    background-repeat: no-repeat;
+    background-size:400px 360px;
+    -moz-background-inline-policy: unset;
+    background-attachment: unset;   
+}
+.fighting:hover{
+    background-color: rgb(94, 45, 45);
+}
+.rock{
+    border: none;
+    margin: 10px;
+    display: inline-block;
+    height: 9rem;
+    width: 25rem;
+    border-radius: 20px;
+    background-color: rgb(97, 82, 74);
+    background-repeat: no-repeat;
+    background-size:400px 360px;
+    -moz-background-inline-policy: unset;
+    background-attachment: unset;   
+}
+.rock:hover{
+    background-color: rgb(95, 88, 84);    
+}
+.ground{
+    border: none;
+    margin: 10px;
+    display: inline-block;
+    height: 9rem;
+    width: 25rem;
+    border-radius: 20px;
+    background-color: rgb(99, 64, 48);
+    background-repeat: no-repeat;
+    background-size:400px 360px;
+    -moz-background-inline-policy: unset;
+    background-attachment: unset;   
+}
+.ground:hover{
+    background-color: rgb(99, 72, 60);
+}
+.poison{
+    border: none;
+    margin: 10px;
+    display: inline-block;
+    height: 9rem;
+    width: 25rem;
+    border-radius: 20px;
+    background-color: rgb(128, 66, 128);
+    background-repeat: no-repeat;
+    background-size:400px 360px;
+    -moz-background-inline-policy: unset;
+    background-attachment: unset;   
+}
+.poison:hover{
+    background-color: rgb(129, 83, 129); 
+}
+.psychic{
+    border: none;
+    margin: 10px;
+    display: inline-block;
+    height: 9rem;
+    width: 25rem;
+    border-radius: 20px;
+    background-color: rgb(199, 124, 187);
+    background-repeat: no-repeat;
+    background-size:400px 360px;
+    -moz-background-inline-policy: unset;
+    background-attachment: unset;   
+}
+.psychic:hover{
+    background-color: rgb(197, 150, 189);
+}
+.ice{
+    border: none;
+    margin: 10px;
+    display: inline-block;
+    height: 9rem;
+    width: 25rem;
+    border-radius: 20px;
+    background-color: rgb(140, 168, 211);
+    background-repeat: no-repeat;
+    background-size:400px 360px;
+    -moz-background-inline-policy: unset;
+    background-attachment: unset;   
+}
+.ice:hover{
+    background-color: rgb(169, 186, 211);
+}
+.ghost{
+    border: none;
+    margin: 10px;
+    display: inline-block;
+    height: 9rem;
+    width: 25rem;
+    border-radius: 20px;
+    background-color: rgb(57, 58, 58);
+    background-repeat: no-repeat;
+    background-size:400px 360px;
+    -moz-background-inline-policy: unset;
+    background-attachment: unset;  
+}
+.ghost:hover{
+    background-color: rgb(94, 95, 95);
+}
+.electric{
+    border: none;
+    margin: 10px;
+    display: inline-block;
+    height: 9rem;
+    width: 25rem;
+    border-radius: 20px;
+    background-color: rgb(231, 231, 61);
+    background-repeat: no-repeat;
+    background-size:400px 360px;
+    -moz-background-inline-policy: unset;
+    background-attachment: unset;  
+}
+.electric:hover{
+    background-color: rgb(231, 231, 105);
+}
+.dragon{
+    border: none;
+    margin: 10px;
+    display: inline-block;
+    height: 9rem;
+    width: 25rem;
+    border-radius: 20px;
+    background-color: rgb(39, 46, 87);
+    background-repeat: no-repeat;
+    background-size:400px 360px;
+    -moz-background-inline-policy: unset;
+    background-attachment: unset;  
+}
+.dragon:hover{
+    background-color: rgb(54, 59, 87);
+}
+
 .divHome{
-    background-image: url('https://www.pixelstalk.net/wp-content/uploads/images1/Best-Pokemon-Wallpaper-UHD-2560x1600.jpg');
+    /* background-image: url('https://www.pixelstalk.net/wp-content/uploads/images1/Best-Pokemon-Wallpaper-UHD-2560x1600.jpg'); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    background-color: rgb(51, 47, 47);
 }
-.h1home{
-    color: rgba(226, 217, 164, 0.8);
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2rem;
+.h1Home{
+    display: flex;
+    margin-left: 40%;
+    margin-bottom: -3%;
+    width: 15rem;
 }
 
 .imgLoadingHome{
@@ -25,4 +247,181 @@ main:hover{
     margin-left: 40%;
     margin-top: -40%;
     background: none;
+}
+
+.selectTypesHome{
+    width: 10%;
+    height: 2.5rem;
+    margin-left: 3%;
+    margin-right: 10%;
+    display:flex;
+    justify-items: start;
+    padding-left: 0.7rem;
+    border-radius: 10px;
+    border:none;
+    background-color: rgba(133, 84, 20, 0.9);
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+    color: bisque;
+}
+
+.selectExistingHome{
+    width: 10%;
+    height: 2.5rem;
+    margin-left: 15%;
+    margin-right: 10%;
+    display:flex;
+    justify-items: start;
+    padding-left: 0.7rem;
+    border-radius: 10px;
+    border:none;
+    background-color: rgba(133, 84, 20, 0.9);
+    margin-top: -2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+    color: bisque;
+}
+
+.selectAZHome{
+    width: 10%;
+    height: 2.5rem;
+    margin-left: 27%;
+    margin-right: 10%;
+    display:flex;
+    justify-items: start;
+    padding-left: 0.7rem;
+    border-radius: 10px;
+    border:none;
+    background-color: rgba(133, 84, 20, 0.9);
+    margin-top: -2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+    color: bisque;
+}
+
+.selectAttackHome{
+    width: 10%;
+    height: 2.5rem;
+    margin-left: 39%;
+    margin-right: 10%;
+    display:flex;
+    justify-items: start;
+    padding-left: 0.7rem;
+    border-radius: 10px;
+    border:none;
+    background-color: rgba(133, 84, 20, 0.9);
+    margin-top: -2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+    color: bisque;
+}
+
+.selectDefenseHome{
+    width: 10%;
+    height: 2.5rem;
+    margin-left: 51%;
+    margin-right: 10%;
+    display:flex;
+    justify-items: start;
+    padding-left: 0.7rem;
+    border-radius: 10px;
+    border:none;
+    background-color: rgba(133, 84, 20, 0.9);
+    margin-top: -2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+    color: bisque;
+}
+
+.selectHpHome{
+    width: 10%;
+    height: 2.5rem;
+    margin-left: 63%;
+    margin-right: 10%;
+    display:flex;
+    justify-items: start;
+    padding-left: 0.7rem;
+    border-radius: 10px;
+    border:none;
+    background-color: rgba(133, 84, 20, 0.9);
+    margin-top: -2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+    color: bisque;
+}
+
+.selectSpeedHome{
+    width: 10%;
+    height: 2.5rem;
+    margin-left: 75%;
+    margin-right: 10%;
+    display:flex;
+    justify-items: start;
+    padding-left: 0.7rem;
+    border-radius: 10px;
+    border:none;
+    background-color: rgba(133, 84, 20, 0.9);
+    margin-top: -2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+    color: bisque;
+}
+
+.divFilters{
+    margin-left: 10%;
+    margin-bottom: 1rem;
+}
+
+.btnCreatePokemons{
+    display: flex;
+    justify-content: left;
+    margin-left: 71.5%;
+    /* margin-top: 1rem; */
+    /* margin-bottom: -1rem; */
+    width: 12rem;
+    height: 2.5rem;
+    padding-top: 10px;
+    /* padding-bottom: 1rem; */
+    padding-left: 27px;
+    border: none;
+    border-radius: 7px;
+    background-color: rgb(230, 192, 42);
+    font-family:'Courier New', Courier, monospace;
+    color: rgb(85, 24, 24);
+    font-size: 1rem;
+    font-weight:900;
+    text-decoration: none;
+}
+
+.btnResetFilters{
+    display: flex;
+    justify-content: left;
+    margin-left: 13%;
+    margin-top: -2.5rem;
+    margin-bottom: -1rem;
+    width: 12rem;
+    height: 2.5rem;
+    padding-top: 10px;
+    /* padding-bottom: 1rem; */
+    padding-left: 30px;
+    border: none;
+    border-radius: 7px;
+    background-color: rgb(230, 192, 42);
+    font-family:'Courier New', Courier, monospace;
+    color: rgb(85, 24, 24);
+    font-size: 1rem;
+    font-weight:900;
+    text-decoration: none;
+}
+
+:link{
+    text-decoration: none;
 }

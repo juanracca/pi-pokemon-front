@@ -16,14 +16,13 @@ export default function Detail(){
         };
     }, [dispatch, id]);
 
-    const myPokemon = useSelector((state) => state.detail)
-    console.log(myPokemon)
-
+    const myPokemon = useSelector((state) => state.detail);
+    
     return(
         <div className='divDetail'>
             <br />
             {
-                myPokemon.length > 0 ?
+                myPokemon.length > 0 ? 
                 <div>
                     <Link to='/pokemons'>
                         <button className='btnDetail'>Back</button>

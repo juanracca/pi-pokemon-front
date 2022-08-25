@@ -3,7 +3,8 @@ import {
     GET_POKEMONS,
     GET_DETAIL,
     CLEAR_DETAIL_STATE,
-    GET_TYPES
+    GET_TYPES,
+    FILTER_BY_TYPE,
 } from "./types";
 
 export function getAllPokemons(){
@@ -54,5 +55,19 @@ export function getTypes(){
             type: GET_TYPES,
             payload: allTypes
         });
+    };
+};
+
+export function postPokemon(payload){
+    return async function(dispatch){
+        const post = await axios.post('http://localhost:3001/pokemon', payload);
+        return post;
+    };
+};
+
+export function filterByType(payload){
+    return{
+        type: FILTER_BY_TYPE,
+        payload
     };
 };
