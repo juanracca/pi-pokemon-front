@@ -112,7 +112,7 @@ export default function PokemonCreate(){
             </Link>
             <form action="" className='formCreate'>
                 <div>
-                    <input type="text" name='name' value={input.name} placeholder='Name' onChange={e => {handleChange(e)}}/>
+                    <input className='inputCreate' type="text" name='name' value={input.name} placeholder='Name' onChange={e => {handleChange(e)}}/>
                 </div>
                 <div>
                     <select name="types" className='selectTypesCreate' onChange={e => {handleSelect(e)}}>
@@ -127,25 +127,25 @@ export default function PokemonCreate(){
                     </select>
                 </div>
                 <div>
-                    <input type="text" name='image' placeholder='Image' value={input.image} onChange={e => {handleChange(e)}}/>
+                    <input className='inputCreate' type="text" name='image' placeholder='Image' value={input.image} onChange={e => {handleChange(e)}}/>
                 </div>
                 <div>
-                    <input type="number" name='hp' placeholder='HP' value={input.hp} onChange={e => {handleChange(e)}}/>
+                    <input className='inputCreate' type="number" name='hp' placeholder='HP' value={input.hp} onChange={e => {handleChange(e)}}/>
                 </div>
                 <div>
-                    <input type="number" name='attack' placeholder='Attack' value={input.attack} onChange={e => {handleChange(e)}}/>
+                    <input className='inputCreate' type="number" name='attack' placeholder='Attack' value={input.attack} onChange={e => {handleChange(e)}}/>
                 </div>
                 <div>
-                    <input type="number" name='defense' placeholder='Defense' value={input.defense} onChange={e => {handleChange(e)}}/>
+                    <input className='inputCreate' type="number" name='defense' placeholder='Defense' value={input.defense} onChange={e => {handleChange(e)}}/>
                 </div>
                 <div>
-                    <input type="number" name='speed' placeholder='Speed' value={input.speed} onChange={e => {handleChange(e)}}/>
+                    <input className='inputCreate' type="number" name='speed' placeholder='Speed' value={input.speed} onChange={e => {handleChange(e)}}/>
                 </div>
                 <div>
-                    <input type="number" name='height' placeholder='Height' value={input.height} onChange={e => {handleChange(e)}}/>
+                    <input className='inputCreate' type="number" name='height' placeholder='Height' value={input.height} onChange={e => {handleChange(e)}}/>
                 </div>
                 <div>
-                    <input type="number" name='weight' placeholder='Weight' value={input.weight} onChange={e => {handleChange(e)}}/>
+                    <input className='inputCreate' type="number" name='weight' placeholder='Weight' value={input.weight} onChange={e => {handleChange(e)}}/>
                 </div>
                 <button className='btnCreate' type='submit' onClick={e => {handleClick(e)}}>Create!</button>
             </form>

@@ -42,54 +42,58 @@ export default function Home(){
 
     return(
         <div className='divHome'>
-            <br/>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png' className='h1Home' alt='Not Found'/>
-            <Link to='/create'>
-                <button className='btnCreatePokemons'>Create Pokemon</button>
-            </Link>
-            
-            <button className='btnResetFilters'>Reset Filters</button>
-            <SearchBar/>
-            <br/>
-            <div className='divFilters'>
-            <select className='selectTypesHome' onChange={e => {handleFilterType(e)}}>
-                <option value="All">Type</option>
-                {
-                    types.map(type => {
-                        return(
-                            <option value={type.name} key={type.id}>{type.name}</option>
-                        )
-                    })
-                }
-            </select>
-            <select className='selectExistingHome'>
-                <option value="Existing">Existing</option>
-                <option value="Created">Created</option>
-            </select>
-            <select className='selectAZHome'>
-                <option value="A-Z">A-Z</option>
-                <option value="Z-A">Z-A</option>
-            </select>
-            <select className='selectAttackHome'>
-                <option value="Attack">Attack</option>
-                <option value="Higher">Higher</option>
-                <option value="Lower">Lower</option>
-            </select>
-            <select className='selectDefenseHome'>
-                <option value="Defense">Defense</option>
-                <option value="Higher">Higher</option>
-                <option value="Lower">Lower</option>
-            </select>
-            <select className='selectHpHome'>
-                <option value="HP">HP</option>
-                <option value="Higher">Higher</option>
-                <option value="Lower">Lower</option>
-            </select>
-            <select className='selectSpeedHome'>
-                <option value="Speed">Speed</option>
-                <option value="Higher">Higher</option>
-                <option value="Lower">Lower</option>
-            </select>
+            <div className='divTitleBtnFilters'>
+                <br/>
+                <Link to='/'>
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png' className='h1Home' alt='Not Found'/>
+                </Link>
+                <Link to='/create'>
+                    <button className='btnCreatePokemons'>Create Pokemon!</button>
+                </Link>
+                
+                <button className='btnResetFilters'>Reset Filters</button>
+                <SearchBar/>
+                <br/>
+                <div className='divFilters'>
+                <select className='selectTypesHome' onChange={e => {handleFilterType(e)}}>
+                    <option value="All">Type</option>
+                    {
+                        types.map(type => {
+                            return(
+                                <option value={type.name} key={type.id}>{type.name}</option>
+                            )
+                        })
+                    }
+                </select>
+                <select className='selectExistingHome'>
+                    <option value="Existing">Existing</option>
+                    <option value="Created">Created</option>
+                </select>
+                <select className='selectAZHome'>
+                    <option value="A-Z">A-Z</option>
+                    <option value="Z-A">Z-A</option>
+                </select>
+                <select className='selectAttackHome'>
+                    <option value="Attack">Attack</option>
+                    <option value="Higher">Higher</option>
+                    <option value="Lower">Lower</option>
+                </select>
+                <select className='selectDefenseHome'>
+                    <option value="Defense">Defense</option>
+                    <option value="Higher">Higher</option>
+                    <option value="Lower">Lower</option>
+                </select>
+                <select className='selectHpHome'>
+                    <option value="HP">HP</option>
+                    <option value="Higher">Higher</option>
+                    <option value="Lower">Lower</option>
+                </select>
+                <select className='selectSpeedHome'>
+                    <option value="Speed">Speed</option>
+                    <option value="Higher">Higher</option>
+                    <option value="Lower">Lower</option>
+                </select>
+                </div>
             </div>
             {
                 currentPokemons ? currentPokemons.map(el => {
@@ -109,11 +113,13 @@ export default function Home(){
                 }) : <img className='imgLoadingHome' src="https://c.tenor.com/Hg2Mb_mQdhYAAAAi/pokemon-pokeball.gif" alt="" />
             }
             <br />
+            <div className='divPaginadoHome'>
             <Paginado 
             pokemonsPerPage = { pokemonsPerPage }
             allPokemons = { allPokemons.length }
             paginado = { paginado }
             />
+            </div>
             <br />
         </div>
     );

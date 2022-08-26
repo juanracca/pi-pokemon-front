@@ -2,6 +2,8 @@ import React from "react";
 
 export default function SearchBar(){
     return(
-        <div></div>
+        <div>
+            <input type="text" className='inputSearch' placeholder='Search Pokemon!'/>
+        </div>
     );
 };
