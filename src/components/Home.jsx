@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import Paginado from "./Paginado";
 import Card from "./Card";
-import { getAllPokemons, getTypes, filterByType } from "../actions/index";
+import { getAllPokemons, getTypes, filterByType, orderByName, filterByAttack, filterByDefense, filterByHp, filterBySpeed } from "../actions/index";
 import '../styles/Home.modules.css';
 
 export default function Home(){
@@ -15,6 +15,7 @@ export default function Home(){
     const dispatch = useDispatch();
     const allPokemons  = useSelector((state) => state.allPokemons);
     const types = useSelector((state) => state.types);
+    const [, setOrder ] = useState('');
     const [ currentPage, setCurrentPage ] = useState(1);
     const [ pokemonsPerPage, ] = useState(15);
     const indexOfLastPokemon = currentPage * pokemonsPerPage;
@@ -30,15 +31,49 @@ export default function Home(){
         dispatch(getTypes());
     }, [dispatch]);
 
-    allPokemons.sort((a,b) => a.id - b.id)
-
     function handleFilterType(e){
         dispatch(filterByType(e.target.value));
-        console.log(e.target.value)
     };
 
-    console.log(allPokemons);
+    function handleClick(e){
+        e.preventDefault();
+        dispatch(getAllPokemons());
+    };
 
+    function handleSort(e){
+        e.preventDefault();
+        dispatch(orderByName(e.target.value));
+        setCurrentPage(1);
+        setOrder(`Order by ${e.target.value}`);
+    };
+
+    function handleSortAttack(e){
+        e.preventDefault();
+        dispatch(filterByAttack(e.target.value));
+        setCurrentPage(1);
+        setOrder(`Order by ${e.target.value}`);
+    };
+
+    function handleSortDefense(e){
+        e.preventDefault();
+        dispatch(filterByDefense(e.target.value));
+        setCurrentPage(1);
+        setOrder(`Order by ${e.target.value}`);
+    };
+
+    function handleSortHp(e){
+        e.preventDefault();
+        dispatch(filterByHp(e.target.value));
+        setCurrentPage(1);
+        setOrder(`Order by ${e.target.value}`);
+    };
+
+    function handleSortSpeed(e){
+        e.preventDefault();
+        dispatch(filterBySpeed(e.target.value));
+        setCurrentPage(1);
+        setOrder(`Order by ${e.target.value}`);
+    };
 
     return(
         <div className='divHome'>
@@ -51,7 +86,7 @@ export default function Home(){
                     <button className='btnCreatePokemons'>Create Pokemon!</button>
                 </Link>
                 
-                <button className='btnResetFilters'>Reset Filters</button>
+                <button className='btnResetFilters' onClick={e => {handleClick(e)}}>Reset Filters</button>
                 <SearchBar/>
                 <br/>
                 <div className='divFilters'>
@@ -65,30 +100,27 @@ export default function Home(){
                         })
                     }
                 </select>
-                <select className='selectExistingHome'>
-                    <option value="Existing">Existing</option>
-                    <option value="Created">Created</option>
+                <select className='selectAZHome' onChange={e => {handleSort(e)}}>
+                    <option value='All'>Name</option>
+                    <option value='A-Z'>A-Z</option>
+                    <option value='Z-A'>Z-A</option>
                 </select>
-                <select className='selectAZHome'>
-                    <option value="A-Z">A-Z</option>
-                    <option value="Z-A">Z-A</option>
-                </select>
-                <select className='selectAttackHome'>
+                <select className='selectAttackHome' onChange={e => {handleSortAttack(e)}}>
                     <option value="Attack">Attack</option>
                     <option value="Higher">Higher</option>
                     <option value="Lower">Lower</option>
                 </select>
-                <select className='selectDefenseHome'>
+                <select className='selectDefenseHome' onChange={e => {handleSortDefense(e)}}>
                     <option value="Defense">Defense</option>
                     <option value="Higher">Higher</option>
                     <option value="Lower">Lower</option>
                 </select>
-                <select className='selectHpHome'>
+                <select className='selectHpHome' onChange={e => {handleSortHp(e)}}>
                     <option value="HP">HP</option>
                     <option value="Higher">Higher</option>
                     <option value="Lower">Lower</option>
                 </select>
-                <select className='selectSpeedHome'>
+                <select className='selectSpeedHome' onChange={e => {handleSortSpeed(e)}}>
                     <option value="Speed">Speed</option>
                     <option value="Higher">Higher</option>
                     <option value="Lower">Lower</option>

@@ -2,12 +2,14 @@ import React, { useEffect } from "react";
 import '../styles/Detail.modules.css';
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getDetail, clearDetailState } from "../actions";
+import { getDetail, clearDetailState, deletePokemon } from "../actions";
+import { useNavigate } from "react-router";
 
 export default function Detail(){
 
     const dispatch = useDispatch();
     const {id} = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         dispatch(getDetail(id));
@@ -17,6 +19,11 @@ export default function Detail(){
     }, [dispatch, id]);
 
     const myPokemon = useSelector((state) => state.detail);
+
+    function handleDelete(e){
+        dispatch(deletePokemon(id));
+        navigate('/pokemons');
+    };
     
     return(
         <div className='divDetail'>
@@ -27,6 +34,11 @@ export default function Detail(){
                     <Link to='/pokemons'>
                         <button className='btnDetail'>Back</button>
                     </Link>
+                    {
+                        id > 151 ?
+                        <button className='btnDelete' onClick={e => {handleDelete(e)}}>Delete Pokemon!</button> :
+                        <p className='pDetail'></p>
+                    }
                     <img src={myPokemon[0].image} alt="" className='detailImage'/>
                     <div className='divDetailText'>
                         <h2 className='detailName'>Name: {myPokemon[0].name.toUpperCase()}</h2>

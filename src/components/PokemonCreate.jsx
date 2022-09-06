@@ -13,10 +13,12 @@ export default function PokemonCreate(){
     const types = useSelector((state) => state.types);
     const allPokemonsIds = useSelector((state) => state.allPokemons.map(el => el.id));
     const newPokemonId = allPokemonsIds.length + 1;
+
     useEffect(() => {
         dispatch(getTypes());
         dispatch(getAllPokemons());
     }, [dispatch]);
+
     const [input, setInput] = useState({
         id: newPokemonId,
         name: '',
@@ -83,11 +85,9 @@ export default function PokemonCreate(){
         }
 
         else{
-            console.log(input)
-            e.preventDefault()
-            dispatch(postPokemon(input))
-            console.log(input)
-            alert('The Pokemon has been created!')
+            e.preventDefault();
+            dispatch(postPokemon(input));
+            alert('The Pokemon has been created!');
             setInput({
                 id: '',
                 name: '',
